@@ -2,11 +2,12 @@
   "dependencies": {
   },
   "name": "readability-helpers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Readability Helpers",
   "repository": "",
   "author": "Andrey Matin",
   "license": "MIT",
+  "repository": "https://github.com/andreymatin/readability-helpers.git",
   "keywords": [
     "javascript",
     "readability",

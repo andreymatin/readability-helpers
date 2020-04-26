@@ -16,7 +16,6 @@
   const connect = require('gulp-connect');
   const open = require('gulp-open');
   const plumber = require('gulp-plumber');
-  const bump = require('gulp-bump');
   const rollup = require('rollup').rollup;
   const babel = require('rollup-plugin-babel');
 
@@ -68,11 +67,18 @@
     });
 
   /**
-   * Scripts
+   * Scripts Reload
    */
   const scripts = () =>
     src(cfg.src.jsBuild)
     .pipe(connect.reload());
+
+  /**
+   * Scripts Copy
+   */
+  const scriptsCopy = () =>
+    src('./src/javascript/text-fragment.js')
+    .pipe(dest('./'));
 
 
   /**
@@ -120,9 +126,8 @@
    */
   const watcher = () => {
     watch(cfg.src.html, html);
-    watch(cfg.src.js, series(roll, scripts));
+    watch(cfg.src.js, series(roll, scripts, scriptsCopy));
   }
 
-  exports.default = parallel(series(roll, scripts), html, openServer, openBrowser, watcher);
-  exports.build = parallel(series(roll, scripts), html, bumper);
+  exports.default = parallel(series(roll, scripts, scriptsCopy), html, openServer, openBrowser, watcher);
 })();

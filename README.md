@@ -2,7 +2,7 @@
 
 Readability methods and functions
 
-- random-text-fragment
+- text-fragment
 
 
 

@@ -12,6 +12,9 @@
  *
  * Random Sentences
  * @param {bool} rnd
+ *
+ * @init 04/26/2020
+ * @update 04/26/2020
  */
 const getTextFragment = (content, minWords = 100, maxWords = 200, rnd = 1) => {
 
