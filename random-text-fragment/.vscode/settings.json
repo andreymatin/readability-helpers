@@ -1,0 +1,10 @@
+{
+  "liveSassCompile.settings.formats": [{
+      "format": "expanded",
+      //"format": "compressed",
+      "extensionName": ".css",
+      "savePath": "/styles/"
+    }
+  ],
+  "workbench.panel.defaultLocation": "right"
+}
